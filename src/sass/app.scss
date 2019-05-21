@@ -1,0 +1,30 @@
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+@import "_components/card";
+@import "_components/dropdown-menu";
+@import "_components/modal";
+@import "_components/badge";
+
+@import "_custom";
+
+
+@import "~noty/lib/noty.css";
+@import "~noty/lib/themes/semanticui.css";
+
+/*
+@import 'ag-grid-community/dist/styles/ag-grid.css';
+@import 'ag-grid-community/dist/styles/ag-theme-balham.css';
+.ag-theme-balham .ag-root{
+    border: none;
+}
+.ag-theme-balham .ag-header{
+    border-bottom: 1px solid $border-color;
+}
+.ag-theme-balham .ag-paging-panel{
+    border-top: 1px solid $border-color;
+}
+*/

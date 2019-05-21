@@ -1,0 +1,27 @@
+.dropdown-menu {
+    -webkit-box-shadow: 0 1px 4px rgba(25, 25, 25, 0.2);
+    box-shadow: 0 1px 4px rgba(25, 25, 25, 0.2);
+  }
+  .dropdown-menu:after,
+  .dropdown-menu:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  .dropdown-menu:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 7px;
+    margin-left: -7px;
+  }
+  .dropdown-menu:before {
+    border-color: rgba(204, 204, 204, 0);
+    border-bottom-color: rgba(204, 204, 204, 0.3);
+    border-width: 8px;
+    margin-left: -8px;
+  }

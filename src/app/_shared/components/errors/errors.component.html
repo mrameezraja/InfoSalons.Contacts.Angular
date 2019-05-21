@@ -1,0 +1,12 @@
+<div *ngIf="errors && errors.message">
+  <div class="alert alert-danger">
+    <strong>{{errors.message}}</strong>
+    <p *ngIf="!errors.validationErrors && errors.details">{{errors.details}}</p>
+    <span *ngIf="errors.validationErrors">
+      <br /><br />
+      <ul>
+        <li *ngFor="let error of errors.validationErrors">{{ error.message }}</li>
+      </ul>
+    </span>
+  </div>
+</div>

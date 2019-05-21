@@ -1,0 +1,99 @@
+@keyframes spin {
+    from {
+      -ms-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -webkit-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    to {
+      -ms-transform: rotate(360deg);
+      -moz-transform: rotate(360deg);
+      -webkit-transform: rotate(360deg);
+      -o-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  
+  .spin {
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    -ms-animation: spin 2s linear infinite;
+    -o-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  svg.icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .form-control::placeholder {
+    color: #ccc;
+  }
+  
+  .vh {
+    min-height: calc(100vh - 120px) !important;
+  }
+  
+  #nprogress .bar{
+    background: $blue;
+  }
+
+  .box-shadow {
+    -webkit-box-shadow: 0 1px 2px rgba(25, 25, 25, 0.2);
+    box-shadow: 0 1px 2px rgba(25, 25, 25, 0.2);
+    // -webkit-box-shadow: 0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);
+    // box-shadow: 0 1px 2px 0 rgba(60,64,67,.3),0 1px 3px 1px rgba(60,64,67,.15);
+  }
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .navbar-app {
+    background-color: #fff;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.16);
+    //border-top: 3px solid $blue;
+  }
+
+  .navbar-nav .nav-item {
+    .feather {
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+    }
+  }
+  .list-group.left-menu,
+  .list-group.horizontal-nav {
+    .list-group-item a {
+      color: $left-menu-color;
+    }
+    .list-group-item a .feather {
+      width: 18px;
+      height: 18px;
+      margin-right: 5px;
+    }
+  
+    .list-group-item a:hover,
+    .list-group-item a.active {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+  
+  .list-group.horizontal-nav {
+    .list-group-item a .feather {
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+    }
+    .list-group-item {
+      padding: 8px;
+      font-size: 13px;
+    }
+  }
+
+  .tbl-admin{
+    font-size: 13px;
+  }
+  

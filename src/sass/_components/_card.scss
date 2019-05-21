@@ -1,0 +1,15 @@
+.card-header {
+    font-size: 18px;
+  }
+  .card .table td {
+    color: $td-color;
+  }
+  .card .table td.pl,
+  .card .table th.pl {
+    padding-left: 20px;
+  }
+  .card .table td.table-actions,
+  .card .table th.table-actions {
+    width: 1%;
+    white-space: nowrap;
+  }
