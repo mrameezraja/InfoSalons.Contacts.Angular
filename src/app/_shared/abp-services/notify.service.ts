@@ -10,7 +10,7 @@ export class NotifyService {
     // https://ned.im/noty/#/
 
     position: string = "topRight";
-    timeout: number = 1500;
+    timeout: number = 2000;
     theme: string = "semanticui";
 
     noty(type: string, message: string, title?: string, options?: any) {

@@ -58,7 +58,7 @@ export class ProfileComponent extends BaseComponent implements OnInit {
         })
       ).subscribe(() => {
         this.appSession.user.name = this.profile.name;
-        this.notify.success("Profile updated");
+        this.notify.success("Profile Updated");
       }, (err) => {
         this.profile.errors = err.error.error;
       });
@@ -74,7 +74,7 @@ export class ProfileComponent extends BaseComponent implements OnInit {
           this.updating = false;
         })
     ).subscribe(() => {
-      this.notify.success("Password updated");
+      this.notify.success("Password Updated");
       }, (err) => {
         this.passwordModel.errors = err.error.error;
       });

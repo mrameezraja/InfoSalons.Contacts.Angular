@@ -48,4 +48,12 @@ export class AccountService {
         return this._apiService.post('/api/services/app/Subscription/Cancel', input);
     }
 
+    forgotPassword(input: any) {
+        return this._apiService.post('/api/services/app/Account/ForgotPassword', input);
+    }
+
+    resetPassword(input: any) {
+        return this._apiService.post('/api/services/app/Account/ResetPassword', input);
+    }
+
 }

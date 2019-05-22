@@ -1,6 +1,6 @@
 export class AppConsts {
 
-    static remoteServiceBaseUrl: string = "https://adf94aea.ngrok.io";
+  static remoteServiceBaseUrl: string = "https://31bf2a9d.ngrok.io";
     static appBaseUrl: string = "http://localhost:4200";
     static appBaseHref: string; // returns angular's base-href parameter value if used during the publish
 

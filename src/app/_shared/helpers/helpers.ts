@@ -22,3 +22,32 @@ export function generateUsername(length: number = 6) {
     }
     return retVal;
 }
+
+export function buildObject(arr: any) {
+    let obj = {};
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].key && arr[i].key.length > 0) {
+            obj[arr[i].key] = arr[i].value;
+        }
+    }
+    return obj;
+}
+
+export function buildArray(obj: any) {
+    let arr = [];
+    Object.keys(obj).forEach((key) => {
+        arr.push({
+            key: key,
+            value: obj[key]
+        });
+    });
+    return arr;
+}
+
+export function getHttpMethods() {
+    return ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "CONNECT", "TRACE", "HEAD"];
+}
+
+export function getContentTypes() {
+    return ["application/json; charset=utf-8", "application/x-www-form-urlencoded", "application/xml", "application/javascript", "text/xml", "text/plain", "text/html"];
+}

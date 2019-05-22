@@ -8,6 +8,8 @@ import {
 } from '@angular/router';
 import { SessionService } from '../services/session.service';
 
+declare let abp: any;
+
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
 
@@ -22,11 +24,16 @@ export class AuthGuard implements CanActivate, CanActivateChild {
             return false;
         }
 
-        //if (!route.data || !route.data['permission']) {
-            //return true;
-        //}
+        if (!route.data || !route.data["permission"]) {
+            return true;
+        }
 
-        //this._router.navigate([this.selectBestRoute()]);
+        //console.log("isGranted: %s, permission: %s", this._permissionChecker.isGranted(route.data["permission"]), route.data["permission"]);
+
+        if (!abp.auth.isGranted(route.data["permission"])) {
+            return false;
+        }
+
         return true;
     }
 

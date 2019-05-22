@@ -9,9 +9,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccountComponent } from './account.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { LoginService } from 'src/app/_shared/services/login.service';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
-  declarations: [AccountComponent, LoginComponent, RegisterComponent, ForgotPasswordComponent],
+  declarations: [
+    AccountComponent,
+    LoginComponent,
+    RegisterComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
+  ],
   entryComponents: [AccountComponent],
   imports: [
     AccountRoutingModule,

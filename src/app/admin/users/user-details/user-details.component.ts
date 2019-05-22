@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ParamsHelper } from 'src/app/_shared/helpers/params.helper';
 
 @Component({
   selector: 'app-user-details-layout',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    // this._route.params.subscribe(params => {
+      // ParamsHelper.currentUserId = +params['id'];
+    // });
   }
 
 }

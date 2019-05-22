@@ -9,6 +9,7 @@ import { SharedModule } from './_shared/shared.module';
 import { SessionService } from './_shared/services/session.service';
 import { PlatformLocation } from '@angular/common';
 import { AppConsts } from './_shared/app-constants';
+import { NavBarComponent } from './_shared/components/nav-bar/nav-bar.component';
 
 export function getBaseHref(platformLocation: PlatformLocation): string {
   var baseUrl = platformLocation.getBaseHrefFromDOM();

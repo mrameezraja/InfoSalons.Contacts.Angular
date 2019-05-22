@@ -17,6 +17,7 @@ import { LayoutComponent } from './layouts/layout/layout.component';
 import { SettingService } from './abp-services/settings-service';
 import { ControlErrorComponent } from './components/control-error/control-error.component';
 import { NotifyService } from './abp-services/notify.service';
+import { LocalizePipe } from './pipes/localize.pipe';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { NotifyService } from './abp-services/notify.service';
         StripeCardComponent,
         IconComponent,
         LayoutComponent,
-        ControlErrorComponent
+        ControlErrorComponent,
+        LocalizePipe
     ],
     imports: [
         RouterModule,
@@ -45,12 +47,14 @@ import { NotifyService } from './abp-services/notify.service';
         IconComponent,
         LayoutComponent,
         SpinnerComponent,
-        ControlErrorComponent
+        ControlErrorComponent,
+        LocalizePipe
     ],
     providers: [
         SettingService,   
         NotifyService,
         AccountService,
-        AuthGuard]
+        AuthGuard
+    ]
 })
 export class SharedModule { }

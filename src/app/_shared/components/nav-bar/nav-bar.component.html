@@ -5,14 +5,19 @@
     </a>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left Side Of Navbar -->
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto" *ngIf="appSession.user">
           <li class="nav-item">
             <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
           </li>
       </ul>
 
       <!-- Right Side Of Navbar -->
-      <ul class="navbar-nav ml-auto">
+      <nav class="navbar-nav ml-auto" *ngIf="!appSession.user">
+          <a class="p-2 text-dark" routerLink="/account/login">Login</a>
+          <a class="p-2 text-dark" routerLink="/account/register">Register</a>
+        </nav>
+
+      <ul class="navbar-nav ml-auto" *ngIf="appSession.user">
         <li class="nav-item dropdown" dropdown>
           <button id="button-profile" class="nav-link btn btn-link dropdown-toggle" dropdownToggle
             aria-controls="dropdown-profile">

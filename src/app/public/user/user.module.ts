@@ -9,7 +9,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserComponent } from './user.component';
 
 @NgModule({
-  declarations: [UserComponent, ProfileComponent, SubscriptionComponent],
+  declarations: [
+    UserComponent,
+    ProfileComponent,
+    SubscriptionComponent
+  ],
   entryComponents: [UserComponent],
   imports: [
     UsersRoutingModule,

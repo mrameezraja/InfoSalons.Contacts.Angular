@@ -5,6 +5,8 @@ import { UsersService } from 'src/app/_shared/services/users.service';
 import { DatePipe } from '@angular/common';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { ResetPasswordComponent } from '../reset-password/reset-password.component';
+import { ParamsHelper } from 'src/app/_shared/helpers/params.helper';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-index',
@@ -19,6 +21,7 @@ export class IndexComponent extends BaseComponentPaging {
   constructor(injector: Injector,
     private _userService: UsersService,
     private _modalService: BsModalService,
+    private _router: Router,
     private _datePipe: DatePipe) {
     super(injector);
   }
@@ -90,6 +93,11 @@ export class IndexComponent extends BaseComponentPaging {
       },
       animated: false
     });
+  }
+
+  navigate(u: any) {
+    ParamsHelper.currentUserId = u.id;
+    this._router.navigate(['/admin/users/details', u.id]);
   }
 
 }

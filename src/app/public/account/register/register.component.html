@@ -13,26 +13,26 @@
             <div class="form-group row">
                 <label for="email" class="col-md-4 col-form-label text-md-right">Full Name</label>
                 <div class="col-md-7">
-                  <input id="text" formControlName="name" type="text" class="form-control" name="fullname" required>
+                  <input id="text" formControlName="name" type="text" class="form-control" name="fullname" placeholder="Full Name" required>
                 </div>
               </div>
             <div class="form-group row">
               <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
               <div class="col-md-7">
-                <input id="email" formControlName="emailAddress" maxlength="255" type="email" class="form-control" name="email" required>
+                <input id="email" formControlName="emailAddress" maxlength="255" type="email" class="form-control" placeholder="E-Mail Address" name="email" required>
                 <app-control-error [control]="form.controls.emailAddress"></app-control-error>
               </div>
             </div>
             <div class="form-group row">
               <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
               <div class="col-md-7">
-                <input id="password" formControlName="password" [formGroup]="form" maxlength="32" type="password" class="form-control" name="password" required>
+                <input id="password" formControlName="password" [formGroup]="form" maxlength="32" type="password" class="form-control" placeholder="A Str@ng Password" name="password" required>
               </div>
             </div>
             <div class="form-group row">
               <label for="password" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
               <div class="col-md-7">
-                <input id="confirmPassword" formControlName="confirmPassword" [formGroup]="form" maxlength="32" type="password" class="form-control" name="confirmPassword" required>
+                <input id="confirmPassword" formControlName="confirmPassword" [formGroup]="form" maxlength="32" type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password" required>
                 <div class="alert alert-danger mt-2 mb-0" *ngIf="form.controls.confirmPassword.errors?.MatchPassword">
                     Password does not match</div>
               </div>

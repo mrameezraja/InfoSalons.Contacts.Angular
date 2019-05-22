@@ -18,6 +18,7 @@ const routes: Routes = [
   {
     path: 'admin',
     canActivate: [AuthGuard],
+    data: { permission: 'Pages.Users' },
     loadChildren: './admin/admin.module#AdminModule'
   },
   {
@@ -28,7 +29,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent }
     ]
   },
-  // { path: '**', redirectTo: '/account/login' }
+  { path: '**', redirectTo: '/account/login' }
 ];
 
 @NgModule({
