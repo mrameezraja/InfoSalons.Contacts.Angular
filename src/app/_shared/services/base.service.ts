@@ -15,7 +15,7 @@ export class BaseService {
     set resource(value: string) {
         this._resource = value;
     }
-    
+
     getAll(skipCount: number, maxResultCount: number) {
         let url_ = this.resource + "/GetAll?";
         if (skipCount !== undefined)
@@ -32,6 +32,10 @@ export class BaseService {
 
     get(id: number) {
         return this._apiService.get(`${this.resource}/get`, { id: id });
+    }
+
+    update(input: any) {
+        return this._apiService.get(`${this.resource}/Update`, input);
     }
 
     delete(id: number) {

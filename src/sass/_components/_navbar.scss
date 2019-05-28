@@ -1,0 +1,17 @@
+.navbar-brand{
+    padding-top:0px;
+}
+
+.navbar-app {
+    background-color: #fff;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.16);
+    border-top: 3px solid $blue;
+  }
+
+  .navbar-nav .nav-item {
+    .feather {
+      width: 14px;
+      height: 14px;
+      margin-right: 5px;
+    }
+  }

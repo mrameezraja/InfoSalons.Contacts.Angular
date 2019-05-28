@@ -23,6 +23,29 @@ export class NotifyService {
         }).show();
     }
 
+    confirm(message: string, callback: Function) {
+        let n = new Noty({
+            text: message || 'Do you want to continue?',
+            theme: this.theme,
+            modal: true,
+            layout: "topCenter",
+            "animation.open": null,
+            "animation.close": null,
+            buttons: [
+                Noty.button('YES', 'btn btn-success', function () {
+                    n.close();
+                  callback(true);
+              }, {id: 'button1', 'data-status': 'ok'}),
+
+              Noty.button('NO', 'btn btn-error', function () {
+                  n.close();
+                  callback(false);
+              })
+            ]
+          });
+          n.show();
+    }
+
     info(message: string, title?: string, options?: any): void {
         this.noty('info', message, title, options);
     }

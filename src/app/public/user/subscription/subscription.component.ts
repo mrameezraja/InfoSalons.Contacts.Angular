@@ -61,7 +61,7 @@ export class SubscriptionComponent extends BaseComponent implements OnInit {
   }
 
   cancel() {
-    this.confirm(
+    this.notify.confirm(
       "Test",
       (result: boolean) => {
         if (result) {
