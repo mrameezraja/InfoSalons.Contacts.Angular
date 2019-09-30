@@ -14,7 +14,7 @@
 # Screenshots
 
 ## Contacts List: 
-![Contacts List](https://github.com/mrameezraja/InfoSalons.Contacts.Angular/screenshots/contacts-list.png "Contacts List")
+![Contacts List](https://raw.githubusercontent.com/mrameezraja/InfoSalons.Contacts.Angular/master/screenshots/contacts-list.png "Contacts List")
 
 ## Add/Edit Contact: 
-![Add/Edit Contact](https://github.com/mrameezraja/InfoSalons.Contacts.Angular/screenshots/create-contact.png "Add/Edit Contact")
+![Add/Edit Contact](https://raw.githubusercontent.com/mrameezraja/InfoSalons.Contacts.Angular/master/screenshots/create-contact.png "Add/Edit Contact")
