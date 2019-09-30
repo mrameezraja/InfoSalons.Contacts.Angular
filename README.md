@@ -6,5 +6,15 @@
 4. Open the `InfoSalons.Contacts.Angular` folder in terminal/command prompt (git bash is recommended).
 5. Run the command `npm install`
 6. If you face any issue due to node version, proceed according to your system. Try deleting `node_modules` folder and re-running `npm install`
-6. Then run `ng serve --open`, (ignore the cli.misMatch warnings if you see one :) )
-7. Application will start running in browser after successful build
+7. [Optional] If you need to change the API url that can be done in `src/app/_shared/app-constants.ts`, update the value of `remoteServiceBaseUrl` variable.
+8. Then run `ng serve --open`, (ignore the cli.misMatch warnings if you see one :) )
+9. Application will start running in browser after successful build
+
+
+# Screenshots
+
+## Contacts List: 
+![Contacts List](https://github.com/mrameezraja/InfoSalons.Contacts.Angular/screenshots/contacts-list.png "Contacts List")
+
+## Add/Edit Contact: 
+![Add/Edit Contact](https://github.com/mrameezraja/InfoSalons.Contacts.Angular/screenshots/create-contact.png "Add/Edit Contact")
