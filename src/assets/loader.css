@@ -1,107 +1,38 @@
-.loader-wrapper {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+  background: #f8f8f8;
+}
+  /* progress loader */
+  .app-loader-wrapper {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 0px auto;
+    width: 300px;
+    padding: 0px 5px;
+    border-radius: 3px;
+  }
+  .app-loader {
+    height: 25px;
+    position: relative;
+    overflow: hidden;
+  }
+  .app-loader-bar{
+    display: block;
+    position: absolute;
+    content: "";
+    top: 5px;
+    left: -200px;
+    width: 200px;
+    height: 15px;
+    background: linear-gradient(65deg, #1274ED 0, #4992F0 100%);
+    animation: app-loading 2s linear infinite;
   }
 
-  .loader-container {
-    height: 100vh;
-    width: 100vw;
-    font-family: Helvetica;
+  @keyframes app-loading {
+      from {left: -200px; width: 30%;}
+      50% {width: 30%;}
+      70% {width: 70%;}
+      80% { left: 50%;}
+      95% {left: 120%;}
+      to {left: 100%;}
   }
-  
-  .loader {
-    height: 20px;
-    width: 250px;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-  }
-  .loader--dot {
-    animation-name: loader;
-    animation-timing-function: ease-in-out;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    height: 20px;
-    width: 20px;
-    border-radius: 100%;
-    background-color: black;
-    position: absolute;
-    border: 2px solid white;
-  }
-  .loader--dot:first-child {
-    background-color: #8cc759;
-    animation-delay: 0.5s;
-  }
-  .loader--dot:nth-child(2) {
-    background-color: #8c6daf;
-    animation-delay: 0.4s;
-  }
-  .loader--dot:nth-child(3) {
-    background-color: #ef5d74;
-    animation-delay: 0.3s;
-  }
-  .loader--dot:nth-child(4) {
-    background-color: #f9a74b;
-    animation-delay: 0.2s;
-  }
-  .loader--dot:nth-child(5) {
-    background-color: #60beeb;
-    animation-delay: 0.1s;
-  }
-  .loader--dot:nth-child(6) {
-    background-color: #fbef5a;
-    animation-delay: 0s;
-  }
-  .loader--text {
-    position: absolute;
-    top: 200%;
-    left: 0;
-    right: 0;
-    text-align: center;
-    margin: auto;
-  }
-  .loader--text:after {
-    content: "Initializing...";
-    font-weight: bold;
-    font-size: 1.5rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /*animation-name: loading-text;*/
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-  }
-  
-  @keyframes loader {
-    15% {
-      transform: translateX(0);
-    }
-    45% {
-      transform: translateX(230px);
-    }
-    65% {
-      transform: translateX(230px);
-    }
-    95% {
-      transform: translateX(0);
-    }
-  }
-  /*
-  @keyframes loading-text {
-    0% {
-      content: "Initializing";
-    }
-    25% {
-      content: "Initializing.";
-    }
-    50% {
-      content: "Initializing..";
-    }
-    75% {
-      content: "Initializing...";
-    }
-  }*/
-  
+  /* / progress loader */

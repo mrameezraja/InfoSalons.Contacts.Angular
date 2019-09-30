@@ -1,11 +1,12 @@
 export class AppConsts {
 
-  static remoteServiceBaseUrl: string = "https://31bf2a9d.ngrok.io";
+  static remoteServiceBaseUrl: string = "http://localhost:21021";
     static appBaseUrl: string = "http://localhost:4200";
     static appBaseHref: string; // returns angular's base-href parameter value if used during the publish
 
-    static pusherKey: string = "";
-    static stripeKey: string = "";
+    static cancelled: string = "cancelled";
+    static created: string = "created";
+    static updated: string = "updated";
 
     static localeMappings: any = [
       {

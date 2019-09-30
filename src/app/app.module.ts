@@ -7,9 +7,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './public/home/home.component';
 import { SharedModule } from './_shared/shared.module';
 import { SessionService } from './_shared/services/session.service';
-import { PlatformLocation } from '@angular/common';
+import { PlatformLocation, CommonModule } from '@angular/common';
 import { AppConsts } from './_shared/app-constants';
 import { NavBarComponent } from './_shared/components/nav-bar/nav-bar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditContactComponent } from './public/edit-contact/edit-contact.component';
+import { CreateContactComponent } from './public/create-contact/create-contact.component';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 export function getBaseHref(platformLocation: PlatformLocation): string {
   var baseUrl = platformLocation.getBaseHrefFromDOM();
@@ -30,13 +34,23 @@ export function appInitializerFactory(injector: Injector, platformLocation: Plat
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CreateContactComponent,
+    EditContactComponent
+  ],
+  entryComponents: [
+    CreateContactComponent,
+    EditContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule,
+    PaginationModule.forRoot(),
   ],
   providers: [
     {

@@ -1,0 +1,127 @@
+<div class="">
+    <form [formGroup]="frmGroup" (submit)="save()">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Update Contact</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="cancel()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+  
+            <div class="row" *ngIf="errors">
+              <div class="col-md-12">
+                <app-errors [errors]="errors"></app-errors>
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="input-label" for="firstName">First Name <small
+                      class="text-muted">[Required]</small></label>
+                  <input type="text" formControlName="firstName" name="firstName" class="form-control" id="firstName"
+                    placeholder="First Name...">
+                    <div *ngIf="frmGroup.controls['firstName'].invalid && (frmGroup.controls['firstName'].dirty || frmGroup.controls['firstName'].touched)">
+                        <small class="text-danger" *ngIf="frmGroup.controls['firstName'].errors.required">
+                        First Name is required.
+                        </small>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="input-label" for="lastName">Last Name <small class="text-muted">[Required]</small></label>
+                    <input type="text" formControlName="lastName" name="lastName" class="form-control" id="lastName"
+                      placeholder="Last Name...">
+                      <div *ngIf="frmGroup.controls['lastName'].invalid 
+                      && (frmGroup.controls['lastName'].dirty || frmGroup.controls['lastName'].touched)">
+                          <small class="text-danger" *ngIf="frmGroup.controls['lastName'].errors.required">
+                          Last Name is required.
+                          </small>
+                      </div>
+                  </div>
+                </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="input-label" for="email">Email <small class="text-muted">[Required]</small></label>
+                  <input type="text" formControlName="email" name="email" class="form-control" id="email"
+                    placeholder="Email...">
+                    <div *ngIf="frmGroup.controls['email'].invalid 
+                    && (frmGroup.controls['email'].dirty || frmGroup.controls['email'].touched)">
+                        <small class="text-danger" *ngIf="frmGroup.controls['email'].errors.email">
+                            Valid Email is required.
+                        </small>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="input-label" for="jobTitle">Job Title <small class="text-muted">[Required]</small></label>
+                    <input type="text" formControlName="jobTitle" name="jobTitle" class="form-control" id="jobTitle"
+                       placeholder="Job Title...">
+                      <div *ngIf="frmGroup.controls['jobTitle'].invalid 
+                      && (frmGroup.controls['jobTitle'].dirty || frmGroup.controls['jobTitle'].touched)">
+                          <small class="text-danger" *ngIf="frmGroup.controls['jobTitle'].errors.required">
+                              Job Title is required.
+                          </small>
+                      </div>
+                  </div>
+                </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="input-label" for="copmany">Company <small class="text-muted">[Required]</small></label>
+                  <input type="text" formControlName="company" name="copmany" class="form-control" id="copmany"
+                    placeholder="Company...">
+                    <div *ngIf="frmGroup.controls['company'].invalid 
+                    && (frmGroup.controls['company'].dirty || frmGroup.controls['company'].touched)">
+                        <small class="text-danger" *ngIf="frmGroup.controls['company'].errors.required">
+                            Company is required.
+                        </small>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="input-label" for="phone">Phone <small class="text-muted">[Required]</small></label>
+                    <input type="text" formControlName="phone" name="phone" class="form-control" id="phone"
+                       placeholder="Phone...">
+                      <div *ngIf="frmGroup.controls['phone'].invalid 
+                      && (frmGroup.controls['phone'].dirty || frmGroup.controls['phone'].touched)">
+                          <small class="text-danger" *ngIf="frmGroup.controls['phone'].errors.required">
+                            Phone is required.
+                          </small>
+                      </div>
+                  </div>
+                </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="input-label" for="attendanceStatus">Attendance Status<small
+                      class="text-muted"> [Required]</small></label>
+                  <select formControlName="attendanceStatus" name="attendanceStatus" class="form-control">
+                    <option value="true">Present</option>
+                    <option value="false">Absent</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" [disabled]="saving" (click)="cancel()">Cancel</button>
+        <app-process-button text="Update" [disabled]="saving || !frmGroup.valid" [isWorking]="saving"></app-process-button>
+      </div>
+    </form>
+  </div>

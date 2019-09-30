@@ -66,24 +66,10 @@ export class SessionService {
                 .toPromise()
                 .then((response: any) => {
                     let result = response.result;
-                    this.subscription = result.subscription;
                     this._application = result.application;
                     this._user = result.user;
                     this._tenant = result.tenant;
-                    this._metaData = result.metaData;
-
-                    $.extend(true, abp, response.result);
-                    if (response.result.clock) {
-                        abp.clock.provider = this.getCurrentClockProvider(response.result.clock.provider);
-                    }
                     
-                    //moment.locale(abp.localization.currentLanguage.name);
-                    //if (abp.clock.provider.supportsMultipleTimezone) {
-                    //  moment.tz.setDefault(abp.timing.timeZoneInfo.iana.timeZoneId);
-                    //}
-                    
-                    // AppConsts.stripeKey = this._metaData["stripeKey"];
-                    // AppConsts.pusherKey = this._metaData["pusherKey"];
                     resolve(true);
                 }, (err) => {
                     reject(err);

@@ -1,6 +1,68 @@
 <div class="card box-shadow vh mb-4">
-  <div class="card-header p-r-12">Welcome Home!</div>
+  <div class="card-header p-r-12">
+    Contacts
+    <app-spinner *ngIf="loading"></app-spinner>
+    <button (click)="create()" class="btn btn-sm btn-primary float-right ml-2">
+      Add Contact
+    </button>
+  </div>
   <div class="card-body px-0 pt-0 pb-0">
+    <form (submit)="search()">
+      <div class="input-group p-3">
+        <input type="text" name="searchText" class="form-control" [(ngModel)]="searchText"
+          placeholder="Search by first name or last name ..." aria-describedby="button-addon2">
+        <div class="input-group-append">
+          <button type="button" [disabled]="loading" *ngIf="searchText.length"
+            class="btn btn-outline-secondary  btn-search" (click)="clearSearch()">Clear</button>
+          <button type="submit" (click)="search()" [disabled]="loading" class="btn btn-outline-secondary btn-search" type="button"
+            id="button-addon2">Search</button>
+        </div>
+      </div>
+    </form>
 
+    <div *ngIf="!rows.length && !loading" class="text-center align-items-center pt-4">
+      <h3>No Contacts</h3>
+    </div>
+
+    <table class="table tbl-admin mb-0" *ngIf="rows.length">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col" class="pl">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Job Title</th>
+          <th scope="col">Company</th>
+          <th scope="col" class="">Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of rows" (click)="edit(row)" [ngClass]="{ 'bg-red': !row.attendanceStatus, 'bg-green': row.attendanceStatus }">
+          <td class="pl align-middle">
+            {{row.firstName}}
+            <br>
+            <small class="text-muted">{{row.phone}}</small>
+          </td>
+          <td class="align-middle">
+              {{row.lastName}}
+          </td>
+          <td class="pr-3 align-middle">
+              {{row.email}}
+          </td>
+          <td class="align-middle">{{ row.jobTitle }}</td>
+          <td class="align-middle">{{ row.company }}</td>
+          <td class="align-middle">{{ row.attendanceStatus ? "Present" : "Absent" }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr *ngIf="rows.length" class="mt-0">   
+
+    <div *ngIf="totalItems > pageSize">        
+      <app-spinner *ngIf="loading" class="float-left pl-3"></app-spinner>
+      <div class="pr-3 float-right">
+        <pagination [totalItems]="totalItems" [(ngModel)]="pageNumber" (pageChanged)="getDataPage($event.page)"
+          [itemsPerPage]="pageSize" [maxSize]="pageSize" [boundaryLinks]="false" previousText="«" nextText="»"></pagination>
+      </div>
+    </div>
   </div>
 </div>

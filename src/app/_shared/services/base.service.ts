@@ -35,7 +35,7 @@ export class BaseService {
     }
 
     update(input: any) {
-        return this._apiService.get(`${this.resource}/Update`, input);
+        return this._apiService.put(`${this.resource}/Update`, input);
     }
 
     delete(id: number) {

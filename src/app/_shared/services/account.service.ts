@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { ApiService } from './api.service';
 import { AppConsts } from '../app-constants';
 import { AuthenticateModel } from '../models/authenticate-model';
-import { RegisterInput } from 'src/app/public/account/register/register.component';
 
 declare var abp: any;
 @Injectable()
@@ -11,7 +10,7 @@ export class AccountService {
 
     }
 
-    register(input: RegisterInput) {
+    register(input: any) {
         return this._apiService.post("/api/services/app/Account/Register", input);
     }
 

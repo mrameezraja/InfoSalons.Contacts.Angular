@@ -9,15 +9,15 @@ import { ErrorsComponent } from './components/errors/errors.component';
 import { AuthGuard } from './gaurds/auth-gaurd';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
-import { StripeCardComponent } from './components/stripe-card/stripe-card.component';
 import { IconComponent } from './components/icon/icon.component';
 import { SessionService } from './services/session.service';
-import { AccountService } from './services/account.service';
 import { LayoutComponent } from './layouts/layout/layout.component';
 import { SettingService } from './abp-services/settings-service';
 import { ControlErrorComponent } from './components/control-error/control-error.component';
 import { NotifyService } from './abp-services/notify.service';
 import { LocalizePipe } from './pipes/localize.pipe';
+import { AccountService } from './services/account.service';
+import { ContactsService } from './services/contacts.service';
 
 
 @NgModule({
@@ -26,7 +26,6 @@ import { LocalizePipe } from './pipes/localize.pipe';
         ProcessButtonComponent,
         ErrorsComponent,
         SpinnerComponent,
-        StripeCardComponent,
         IconComponent,
         LayoutComponent,
         ControlErrorComponent,
@@ -43,7 +42,6 @@ import { LocalizePipe } from './pipes/localize.pipe';
         NavBarComponent,
         ProcessButtonComponent,
         ErrorsComponent,
-        StripeCardComponent,
         IconComponent,
         LayoutComponent,
         SpinnerComponent,
@@ -51,9 +49,10 @@ import { LocalizePipe } from './pipes/localize.pipe';
         LocalizePipe
     ],
     providers: [
+        AccountService,
+        ContactsService,
         SettingService,   
         NotifyService,
-        AccountService,
         AuthGuard
     ]
 })
