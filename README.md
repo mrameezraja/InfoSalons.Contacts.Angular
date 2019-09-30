@@ -9,6 +9,7 @@
 7. [Optional] If you need to change the API url that can be done in `src/app/_shared/app-constants.ts`, update the value of `remoteServiceBaseUrl` variable.
 8. Then run `ng serve --open`, (ignore the cli.misMatch warnings if you see one :) )
 9. Application will start running in browser after successful build
+10. I have also implemented paging. It will be displayed after 10 records.
 
 
 # Screenshots
